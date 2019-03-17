@@ -1,0 +1,21 @@
+# 输入描述:
+# 输入数据为以空格分隔的两个整数k和n
+# 输出描述:
+# 每行输出一个可能的编号（1-9）组合，组合内部各个编号以空格分隔升序输出。若无满足规则的组合，则输出None
+from itertools import combinations
+k,n = map(int,input().split())
+s = [i for i in range(1,10)]
+com_list = list(combinations(s,k))
+
+num = 0
+for i in com_list:
+    total = 0
+    for j in i:
+        total += j
+    if total == n:
+        num += 1
+        for z in i:
+            print(z,end=" ")
+        print("\t")
+if num==0:
+    print("None")
