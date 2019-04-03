@@ -8,7 +8,10 @@ VALUES
 	( '2018-03-01 08:00:00', 'tea', 5555, 180 ),
 	( '2018-03-01 00:00:01', 'tea', 333, 100 ),
 	( '2018-03-01 00:00:01', 'tea', 444, 188 ),
-	( '2018-03-01 00:00:01', 'digit', 45454, 5399 );# 统计2018各月销售金额
+	( '2018-03-01 00:00:01', 'digit', 45454, 5399 );
+	
+	
+# 统计2018各月销售金额
 SELECT
 	DATE_FORMAT( t.order_time, '%Y-%m' ) AS '日期',
 	SUM( t.order_amount ) AS '销售金额' 
@@ -17,7 +20,9 @@ FROM
 WHERE
 	YEAR ( t.order_time ) = 2018 
 GROUP BY
-	MONTH ( t.order_time ) # 统计2018各月销售金额，并排名
+	MONTH ( t.order_time ) 
+	
+# 统计2018各月销售金额，并排名
 SELECT
 	tt.r AS '日期',
 	tt.x AS '销售金额',
@@ -51,7 +56,9 @@ FROM
 	( SELECT @curRank := 0, @prevRank := NULL ) b 
 	) tt 
 ORDER BY
-	tt.r # 选出2月每个类目销量最高的两个爆款以及排名先后
+	tt.r 
+	
+# 选出2月每个类目销量最高的两个爆款以及排名先后
 SELECT
 	t.cate AS '类目',
 	t.goods_id AS '商品id',
