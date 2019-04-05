@@ -10,7 +10,7 @@ def bubble_sort(l):
     n = len(l)
     j = 1
     while j < n:
-        for i in range(n-1):
+        for i in range(n-j-1):
             if l[i]>l[i+1]:
                 l[i],l[i+1] = l[i+1],l[i]
         j+=1
