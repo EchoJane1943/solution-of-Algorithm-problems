@@ -1,19 +1,13 @@
-def plan(t):
-    count = 0
-    if len(t) < 3:
-        return 0
-    if t[0] < t[1] and t[0] < t[2]: # 爬一层最好
-        count += t[0]
-        return count + plan(t[1:])
-    if t[1] <= t[0] and t[1] < t[2]: # 跳一层最好
-        count += t[1]
-        return count + plan(t[2:])
-    if t[2] <= t[0] and t[2] <= t[1]: # 跳两层最好
-        count += t[2]
-        return count + plan(t[3:])
+def printNum(n):
 
-n = int(input())
-l = list()
-for i in range(n):
-    l.append(int(input()))
-print(plan(l))
+    num = [i for i in range(1, n+1)]
+
+    while n > 1:
+        print(num[0], '', end='')
+        num = num[2:] + [num[1]]
+        n -= 1
+    print(num[0])
+
+if __name__ == '__main__':
+    n = int(input())
+    printNum(n)
