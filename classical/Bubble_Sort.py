@@ -5,16 +5,14 @@
 针对所有的元素重复以上的步骤，除了第一个。
 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较
 '''
-l = [7,5,8,3,9,2]
+l = [45, 32, 8, 33, 12, 22, 19, 97]
 def bubble_sort(l):
     n = len(l)
     j = 1
     while j < n:
         for i in range(n-1):
             if l[i]>l[i+1]:
-                temp = l[i]
-                l[i] = l[i+1]
-                l[i+1] = temp 
+                l[i],l[i+1] = l[i+1],l[i]
         j+=1
     return l
 bubble_sort(l)
