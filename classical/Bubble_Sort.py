@@ -7,14 +7,13 @@
 '''
 
 # 冒泡排序是稳定的。算法时间复杂度是O(n^2)。
-l = [45, 32, 8, 33, 12, 22, 19, 97]
 def bubble_sort(l):
     n = len(l)
-    j = 1
-    while j < n:
-        for i in range(n-j-1):
-            if l[i]>l[i+1]:
-                l[i],l[i+1] = l[i+1],l[i]
-        j+=1
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if l[j] > l[j+1]:
+                l[j],l[j+1] = l[j+1],l[j]
     return l
+    
+l = [45, 32, 8, 33, 12, 22, 19, 97]
 bubble_sort(l)
