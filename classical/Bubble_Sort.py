@@ -5,12 +5,18 @@
 针对所有的元素重复以上的步骤，除了最后k个(第k+1次)。一共循环n-1次。
 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较
 
-Worst case performance	O(n2)
-Best case performance	O(n)
-Average case performance	O(n2)
+Worst case performance	 O(n2)
+Best case performance	 O(n)
+Average case performance O(n2)
+
+PROPERTIES:
+Stable
+O(1) extra space
+O(n2) comparisons and swaps
+Adaptive: O(n) when nearly sorted
 '''
 
-# 冒泡排序是稳定的。算法时间复杂度是O(n^2)。
+# 冒泡排序是稳定的。
 def bubble_sort(l):
     n = len(l)
     for i in range(n-1):
