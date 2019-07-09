@@ -2,8 +2,8 @@
 
 def sortoddeven(arr):
     n = len(arr)
-    for _ in range(n-1):
-        for i in range(n-1):
+    for k in range(n-1):
+        for i in range(n-k-1):
             if arr[i]%2==0 and arr[i+1]%2==1:
                 arr[i],arr[i+1]=arr[i+1],arr[i]
     return arr
