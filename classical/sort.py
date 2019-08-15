@@ -2,7 +2,6 @@
 """
 Spyder Editor
 
-This is a temporary script file.
 """
 l = [1,3,2,6,9,33,66,44]
 # 蒂姆排序
